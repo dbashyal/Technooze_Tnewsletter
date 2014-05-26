@@ -11,7 +11,7 @@
             <newsletter>
                 <args>
                     <modules>
-                        <technooze_tnewsletter before="Acidgreen_Newsletter">Technooze_Tnewsletter</technooze_tnewsletter>
+                        <technooze_tnewsletter before="Mage_Newsletter">Technooze_Tnewsletter</technooze_tnewsletter>
                     </modules>
                 </args>
             </newsletter>

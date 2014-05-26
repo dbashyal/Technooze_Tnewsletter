@@ -1,6 +1,6 @@
 <?php
-require_once Mage::getModuleDir('controllers','Acidgreen_Newsletter').DS.'SubscriberController.php';
-class Technooze_Tnewsletter_SubscriberController extends Acidgreen_Newsletter_SubscriberController
+require_once Mage::getModuleDir('controllers','Mage_Newsletter').DS.'SubscriberController.php';
+class Technooze_Tnewsletter_SubscriberController extends Mage_Newsletter_SubscriberController
 {
 
     /**
