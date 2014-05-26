@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Technooze_Tnewsletter>
+            <version>1.0.0</version>
+        </Technooze_Tnewsletter>
+    </modules>
+
+    <frontend>
+        <routers>
+            <newsletter>
+                <args>
+                    <modules>
+                        <technooze_tnewsletter before="Acidgreen_Newsletter">Technooze_Tnewsletter</technooze_tnewsletter>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+
+        <layout>
+            <updates>
+                <tnewsletter>
+                    <file>tnewsletter.xml</file>
+                </tnewsletter>
+            </updates>
+        </layout>
+
+        <translate>
+            <modules>
+                <Technooze_Tnewsletter>
+                    <files>
+                        <default>Technooze_Tnewsletter.csv</default>
+                    </files>
+                </Technooze_Tnewsletter>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Technooze_Tnewsletter>
+                    <files>
+                        <default>Technooze_Tnewsletter.csv</default>
+                    </files>
+                </Technooze_Tnewsletter>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <global>
+        <blocks>
+            <tnewsletter>
+                <class>Technooze_Tnewsletter_Block</class>
+            </tnewsletter>
+        </blocks>
+
+        <helpers>
+            <tnewsletter>
+                <class>Technooze_Tnewsletter_Helper</class>
+            </tnewsletter>
+        </helpers>
+
+        <models>
+            <tnewsletter>
+                <class>Technooze_Tnewsletter_Model</class>
+                <rewrite>
+                    <subscriber>Technooze_Tnewsletter_Model_Subscriber</subscriber>
+                </rewrite>
+            </tnewsletter>
+        </models>
+
+        <template>
+            <email>
+                <newsletter_tnewsletter_email_template translate="label" module="tnewsletter">
+                    <label>Newsletter subscriber coupon</label>
+                    <file>technooze/tnewsletter/newsletter_subscriber_coupon.html</file>
+                    <type>html</type>
+                </newsletter_tnewsletter_email_template>
+            </email>
+        </template>
+    </global>
+
+    <default>
+        <tnewsletter>
+            <general>
+                <isactive>0</isactive>
+            </general>
+            <coupon>
+                <isactive>0</isactive>
+                <format>alphanum</format>
+                <length>8</length>
+            </coupon>
+        </tnewsletter>
+    </default>
+</config>
