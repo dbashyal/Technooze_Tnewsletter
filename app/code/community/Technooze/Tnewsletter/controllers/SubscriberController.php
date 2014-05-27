@@ -33,7 +33,7 @@ class Technooze_Tnewsletter_SubscriberController extends Mage_Newsletter_Subscri
 
     private function sendCouponEmail(Mage_Newsletter_Model_Subscriber $subscriber){
         // if user have never been confirmed before.
-        if($subscriber->getData('subscriber_status') == Mage_Newsletter_Model_Subscriber::STATUS_UNCONFIRMED){
+        if(in_array($subscriber->getData('subscriber_status'), array(Mage_Newsletter_Model_Subscriber::STATUS_UNCONFIRMED, Mage_Newsletter_Model_Subscriber::STATUS_NOT_ACTIVE))){
             $coupon = Mage::getModel('tnewsletter/subscriber')->getCouponCode();
             if($coupon){
                 $transactionEmailId = Mage::getStoreConfig('newsletter/tnewsletter/email_template');
